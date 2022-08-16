@@ -42,12 +42,12 @@ public class Playfair_Cipher {
         for (int ii = 0; ii < sb.length() - 1; ii = ii + 2) {
             //if its not the last pair
             if (sb.charAt(ii) == sb.charAt(ii + 1) && (ii + 1) != sb.length() - 1) {
-                sb.insert(ii + 1, filler);
+                sb.insert(ii + 1, 'X');
             }
             //if it is the last pair
             if (sb.charAt(ii) == sb.charAt(ii + 1) && (ii + 1) == sb.length() - 1) {
-                sb.insert(ii + 1, filler);
-                sb.append(filler);
+                sb.insert(ii + 1, 'X');
+                //sb.append(filler);
             }
         }
 
@@ -60,25 +60,28 @@ public class Playfair_Cipher {
         //Fill the Key in Matrix
         char[][] board = new char[5][5];
         List<Character> lst = new ArrayList<>();
-        int i = 0, j = 0;
-        for (char c : key.toCharArray()) {
-            if (c == 'J') {
-                c = 'I';
+        int idx=0;
+        int i=0,j=0;
+        for( i=0;i<5;i++){
+            for(j=0;j<5;j++){
+                if(idx==key.length()){
+                    break;
+                }
+                char c=key.charAt(idx++);
+                if (c == 'J') {
+                    c = 'I';
+                }   
+                if (!lst.contains(c)){
+                    board[i][j]=c;
+                    lst.add(c);
+                }
+                
             }
-            if (j == 5) {
-                j = 0;
-                i++;
-            }
-            if (!lst.contains(c)) {
-                lst.add(c);
-                board[i][j] = c;
-                j++;
-            }
-            if (i == 4) {
-                break;
-            }
-
+            if(idx==key.length()){
+                    break;
+                }
         }
+        
         //Fill Remaining Spaces in Matrix
         char ascii = 65;
         for (int k1 = i; k1 < 5; k1++) {

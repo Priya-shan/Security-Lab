@@ -51,6 +51,9 @@ public class Ceasar_Cipher {
             }
             int loc=hmap1.get(c);
             loc=(loc+key)%26;
+            if(loc<0){
+                loc=26+loc;
+            }
             res+=hmap2.get(loc);
         }
        return res;
