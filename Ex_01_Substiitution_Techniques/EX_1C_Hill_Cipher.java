@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package Substiitution_Techniques;
+package Ex_01_Substiitution_Techniques;
 
 import java.util.*;
 
@@ -12,7 +12,7 @@ import java.util.*;
  *
  * @author Shanmuga Priya M
  */
-public class Hill_Cipher {
+public class EX_1C_Hill_Cipher {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in).useDelimiter("\n");
         
