@@ -37,7 +37,7 @@ public class Ex_1C_Hill_Cipher {
         int[][] key = new int[3][3];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                key[i][j]=hmap1.get(k.charAt(idx++))+1;
+                key[i][j]=hmap1.get(k.charAt(idx++));
             }
         }
         

@@ -27,12 +27,12 @@ public class Ex_1D_Vigenere_Cipher {
             ascii++;
         }
         //print matrix
-        for (char[] arr : board) {
-            for (char c : arr) {
-                System.out.print(c + " ");
-            }
-            System.out.println("");
-        }
+//        for (char[] arr : board) {
+//            for (char c : arr) {
+//                System.out.print(c + " ");
+//            }
+//            System.out.println("");
+//        }
         HashMap<Character, Integer> hmap = new HashMap<>();
         HashMap<Integer,Character> hmap2 = new HashMap<>();
         ascii = 65;
@@ -41,7 +41,7 @@ public class Ex_1D_Vigenere_Cipher {
             hmap2.put(i,(char) ascii);
             ascii++;
         }
-        System.out.println(hmap);
+//        System.out.println(hmap);
 
         Scanner sc = new Scanner(System.in).useDelimiter("\n");
         String txt = sc.next();
